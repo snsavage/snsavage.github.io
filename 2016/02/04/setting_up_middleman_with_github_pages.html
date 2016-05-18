@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="/stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title>Blog Title - Middleman Blog with GitHub Pages</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  </head>
+  <body>
+    
+    <header>
+      <nav class="clearfix">
+        <h1>snsavage.com</h1>
+        <ul>
+          <li class="nav-right"><a href="/">Home</a></li>
+          <li class="nav-right"><a href="about">About</a></li>
+          <li class="nav-right"><a href="contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div id="main" role="main">
+          <article>
+    <h2>Middleman Blog with GitHub Pages</h2>
+    <h3>February,  4 2016</h3>
+    <h4>By Scott Savage</h4>
+    <p>Middleman is a static site generation framework with an available blog extension package.  I&rsquo;ve tried to set up a blog with Middleman in the past, but I&rsquo;ve always had trouble with deploying to GitHub pages.  To me it&rsquo;s not as straight forward as it should be, but I think with a few tips it can easily be done.  Here are the steps that worked for me.  </p>
+
+<p></p>
+
+<p>Start off by creating a new Middleman Blog, change into the new directory and initialize a new git repo.  </p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="gp">$ </span>middleman init snsavage.github.io --template<span class="o">=</span>blog
+<span class="gp">$ </span><span class="nb">cd </span>snsavage.github.io/
+<span class="gp">$ </span>git init
+</pre></td></tr></tbody></table>
+</div>
+
+<p>GitHub Pages uses two different conventions depending on whether the pages are for a user, organization or a project.  User pages are created in a GitHub repo with a <code>username.github.io</code> naming scheme and are served using files on the <code>master</code> branch of that repo.  Project pages on the other hand use the <code>http(s)://&lt;username&gt;.github.io/&lt;projectname&gt;</code> naming scheme and are served from the <code>gh-pages</code> branch.  Here are the instructions for <a title="GitHub Pages" href="https://pages.github.com">setting up your GitHub Pages repo</a> and more <a title="User, Organization, and Project Pages" href="https://help.github.com/articles/user-organization-and-project-pages/">detail on page types and naming conventions</a>.</p>
+
+<p>After you have setup your GitHub repo, don&rsquo;t forget to add the remote to your local repo.</p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>git remote add origin https://github.com/snsavage/snsavage.github.io.git
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Because GitHub Pages use the <code>master</code> branch for deploying your site, you&rsquo;ll need to create a new branch for developing your site.  Understanding how this branch structure works with GitHub Pages is extremely important.  This is what caused most of my headaches.  </p>
+
+<p>Create a new branch called <code>development</code>, add the files to the repo and then commit the changes.   </p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="gp">$ </span>git checkout -b development
+<span class="gp">$ </span>git add .
+<span class="gp">$ </span>git commit -a -m <span class="s2">"Initial Middleman Blog Setup"</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>At this point your site should only have a <code>development</code> branch.  Nothing was committed to the original <code>master</code> branch before creating the <code>development</code> branch.  During my setup I created the <code>master</code> branch and tested adding a file to that branch.  More information on manually creating pages can be found <a title="Creating Project Pages Manually" href="https://help.github.com/articles/creating-project-pages-manually/">here</a>.</p>
+
+<p>First, create the new <code>master</code> branch as an <a title="git-checkout Manual Page" href="https://git-scm.com/docs/git-checkout/1.7.3.1">orphan</a> branch.  Then remove all files from that branch.  I also had to remove a directory that remained behind.  </p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre><span class="gp">$ </span>git checkout --orphan master
+<span class="gp">$ </span>git rm -rf .
+<span class="gp">$ </span>rm -rf <span class="nb">source</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Second, create an index.html file, add the file to the repo, commit the file and push to <code>origin</code>.  As noted earlier, more on these steps can be found <a title="Creating Project Pages Manually" href="https://help.github.com/articles/creating-project-pages-manually/">here</a>.</p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4</pre></td><td class="code"><pre><span class="gp">$ </span><span class="nb">echo</span> <span class="s2">"My Page"</span> &gt; index.html
+<span class="gp">$ </span>git add index.html
+<span class="gp">$ </span>git commit -a -m <span class="s2">"First pages commit"</span>
+<span class="gp">$ </span>git push origin master
+</pre></td></tr></tbody></table>
+</div>
+
+<p>At this point your website should be live with the sample <code>index.html</code> page.  Your web address will be <code>&lt;username&gt;.github.io</code>.  But now that you know that isn&rsquo;t working, it&rsquo;s time to finish setting up Middleman.  Start by removing the <code>index.html</code> file.</p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>git rm index.html
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Now it&rsquo;s time to head back to the <code>development</code> branch to finish the Middleman setup.  </p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre><span class="gp">$ </span>git checkout development
+</pre></td></tr></tbody></table>
+</div>
+
+<p>I used the Middleman Deploy extension to handle deploying to GitHub Pages.  The following instructions can be found <a title="Middleman Deploy" href="https://github.com/middleman-contrib/middleman-deploy">here</a>.  As of this writing there is a typo in the Middleman Deploy <code>README.md</code>.  I&rsquo;ve noted it below.     </p>
+
+<p>Add to your Gemfile.</p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>gem <span class="s1">'middleman-deploy'</span>, <span class="s1">'~&gt; 1.0'</span>
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Add the following lines to your <code>config.rb</code>.</p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5</pre></td><td class="code"><pre>activate :deploy <span class="k">do</span> |deploy|
+  deploy.method <span class="o">=</span> :git  <span class="c"># This is shown as deploy.deploy_method in the README.</span>
+  deploy.remote <span class="o">=</span> <span class="s2">"origin"</span>
+  deploy.branch <span class="o">=</span> <span class="s2">"master"</span>
+end
+</pre></td></tr></tbody></table>
+</div>
+
+<p>Build and deploy your blog.</p>
+<div class="highlight shell"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2</pre></td><td class="code"><pre><span class="gp">$ </span>middleman build
+<span class="gp">$ </span>middleman deploy
+</pre></td></tr></tbody></table>
+</div>
+
+<p>This is the process that worked for me.  Please let me know if you have any feedback.</p>
+
+  </article>
+
+      </div>
+      
+      <aside>
+        <h2>Recent Articles</h2>
+        <ol>
+            <li><a href="/2016/02/04/setting_up_middleman_with_github_pages.html">Middleman Blog with GitHub Pages</a> <span>Feb  4</span></li>
+        </ol>
+
+        <h2>Tags</h2>
+        <ol>
+            <li><a href="/tags/middleman.html">middleman (1)</a></li>
+            <li><a href="/tags/github.html">github (1)</a></li>
+            <li><a href="/tags/github-pages.html">github pages (1)</a></li>
+            <li><a href="/tags/tutorial.html">tutorial (1)</a></li>
+        </ol>
+
+        <h2>By Year</h2>
+        <ol>
+            <li><a href="/2016.html">2016 (1)</a></li>
+        </ol>
+      </aside>
+    </main>
+  </body>
+</html>
