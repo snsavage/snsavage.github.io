@@ -3555,30 +3555,48 @@ textarea {
   line-height: 0; }
 
 /* line 73, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+html, body {
+  height: 100%; }
+
+/* line 77, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 html {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important; }
 
-/* line 78, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 82, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+body {
+  padding: 0;
+  margin: 0; }
+
+/* line 87, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+#container {
+  min-height: 100%;
+  position: relative; }
+
+/* line 92, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+main {
+  padding-bottom: 10em; }
+
+/* line 96, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Merriweather Sans", sans-serif; }
 
-/* line 82, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 100, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 p {
   font-family: "Merriweather", serif;
   font-weight: 300; }
 
-/* line 87, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 105, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 header {
   height: 3em;
   background-color: #333;
   color: white; }
 
-/* line 93, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 111, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 nav {
   height: 3em; }
 
-/* line 97, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 115, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 nav h1 {
   font-size: 1.5em;
   line-height: 2;
@@ -3586,21 +3604,21 @@ nav h1 {
   padding: 0;
   display: inline-block; }
 
-/* line 105, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 123, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 nav ul {
   float: right;
   margin: 0;
   padding: 0;
   list-style-type: none; }
 
-/* line 112, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 130, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 nav li {
   font-size: 1em;
   line-height: 3;
   display: inline-block;
   list-style-type: none; }
 
-/* line 119, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 137, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 nav li a {
   font-family: "Merriweather Sans", sans-serif;
   padding: 0 1em;
@@ -3609,39 +3627,39 @@ nav li a {
   text-decoration: none;
   color: white; }
 
-/* line 128, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 146, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 nav li a:hover {
   background-color: black; }
 
-/* line 132, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 150, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 p {
   font-family: "Merriweather", serif;
   font-size: 1.0em;
   line-height: 1.6; }
 
-/* line 138, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 156, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 article h2, h3, h4 {
   text-align: center; }
 
-/* line 142, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 160, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .article-summary {
   margin-top: 10px;
   padding: 10px; }
 
-/* line 147, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 165, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .article-summary:nth-child(n+2) {
   border-top: 1px dotted #333; }
 
-/* line 151, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 169, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 h2 a {
   color: #333;
   text-decoration: none; }
 
-/* line 156, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 174, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 a {
   color: #333; }
 
-/* line 160, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 178, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 p code {
   padding: 0;
   padding-top: 0.2em;
@@ -3651,16 +3669,16 @@ p code {
   border-radius: 3px;
   background-color: #f7f7f7; }
 
-/* line 170, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 188, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 p code:before, p code:after {
   letter-spacing: -0.2em;
   content: "\00a0"; }
 
-/* line 175, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 193, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 code, kbd, pre, samp {
   font-family: "Hack", monospace; }
 
-/* line 179, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 197, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .highlight {
   word-break: normal;
   padding: 0.5em;
@@ -3670,69 +3688,72 @@ code, kbd, pre, samp {
   background-color: #f7f7f7;
   border-radius: 3px; }
 
-/* line 189, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 207, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height: 10em;
   background-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.5);
   border-top: 1px solid rgba(0, 0, 0, 0.5); }
 
-/* line 196, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 217, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 #copyright {
   color: rgba(0, 0, 0, 0.25);
   font-size: 0.9em; }
 
-/* line 201, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 222, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .footer-content {
   padding: 10px; }
 
-/* line 205, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 226, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .footer-content div {
   display: inline-block;
   vertical-align: middle; }
 
-/* line 210, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 231, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .left-footer {
   text-align: left;
   border-right: 1px dotted #333;
   width: 32.5%; }
 
-/* line 216, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 237, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .left-footer div {
   display: inline-block; }
 
-/* line 220, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 241, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .left-footer ul, .left-footer li {
   list-style-type: none;
   padding: 0;
   margin: 10px 0; }
 
-/* line 226, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 247, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .left-footer a {
   color: rgba(0, 0, 0, 0.5);
   text-decoration: none; }
 
-/* line 231, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 252, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .left-footer a:hover {
   color: rgba(0, 0, 0, 0.8);
   text-decoration: underline; }
 
-/* line 236, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 257, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .center-footer {
   text-align: center;
   width: 32.5%; }
 
-/* line 241, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 262, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .social {
   text-align: right;
   border-left: 1px dotted #333;
   width: 32.5%; }
 
-/* line 247, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 268, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .social a {
   color: rgba(0, 0, 0, 0.5);
   text-decoration: none; }
 
-/* line 252, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+/* line 273, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .social a:hover {
   color: rgba(0, 0, 0, 0.8); }
