@@ -3757,3 +3757,39 @@ footer {
 /* line 273, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
 .social a:hover {
   color: rgba(0, 0, 0, 0.8); }
+
+/* line 277, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+.article-title {
+  display: inline-block;
+  margin: 0;
+  padding: 0; }
+
+/* line 283, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+.article-date {
+  display: inline-block;
+  float: right;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.6);
+  font-style: italic;
+  font-weight: normal; }
+
+/* line 293, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+.article-summary-text {
+  text-align: justify; }
+
+/* line 297, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+.read-more {
+  float: right; }
+
+/* line 301, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+aside {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background-color: #f7f7f7; }
+
+/* line 310, /Users/snsavage/Dropbox/Development/snsavage.github.io/source/stylesheets/all.css.scss */
+aside h2 {
+  font-size: 1.25em; }
