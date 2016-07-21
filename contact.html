@@ -12,19 +12,26 @@
   <body>
     <div id="container">
     <header>
-      <nav class="clearfix">
+      <nav class="clearfix hidden-nav-menu">
         <h1>snsavage.com</h1>
-        <ul>
-          <li class="nav-right"><a href="/">Home</a></li>
-          <li class="nav-right"><a href="/about.html">About</a></li>
-          <li class="nav-right"><a href="/contact.html">Contact</a></li>
-        </ul>
+          <h1 class="hidden-nav-trigger"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></h1>
+          <ul class="nav-menu">
+            <li class="nav-right"><a href="/">Home</a></li>
+            <li class="nav-right"><a href="/about.html">About</a></li>
+            <li class="nav-right"><a href="/contact.html">Contact</a></li>
+          </ul>
       </nav>
     </header>
 
     <main>
       <div id="main" role="main">
-        
+        <form action="https://formspree.io/snsavage@gmail.com" method="POST">
+  <input type="text" name="name">
+  <input type="email" name="_replyto">
+  <input type="submit" value="Send">
+  <input type="hidden" name="_next" value="//snsavage.com" />
+</form>
+
       </div>
       
     </main>
@@ -38,7 +45,7 @@
           </ul>
         </div>
         <div class="center-footer">
-          <p>Made in Penna., U.S.A.</p>
+          <p>Made in PA, U.S.A.</p>
           <p id="copyright">&#169; <em>2016 Scott Savage</em></p>
         </div>
         <div class="social">
